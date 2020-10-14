@@ -19,6 +19,12 @@ public class LinkedList {
     /* method to create a simple linked list with 3 nodes*/
     public static void main(String[] args)
     {
+        LinkedList list = CreataList();
+        printlist(list);
+    }
+
+    // 創造一個新的list
+    public static LinkedList CreataList(){
         /* Start with the empty list. */
         LinkedList llist = new LinkedList();
 
@@ -63,18 +69,28 @@ public class LinkedList {
         +----+------+     +----+------+     +----+------+ */
 
         third.next = fourth;
-
-        llist.printlist();
+        return llist;
     }
 
-    public void printlist(){
+    // 印出所有list 項目
+//    public void printlist(){
+//
+//        Node n = head;
+//        // 判斷是否有下一個項目
+//        while (n!= null){
+//            System.out.println(n.data);
+//            n = n.next;
+//        }
+//
+//    }
 
-        Node n = head;
-        // 判斷是否有下一個項目
-        while (n!= null){
-            System.out.println(n.data);
-            n = n.next;
+    public static void printlist(LinkedList list){
+
+//        Node n = new head;
+        while(list.head.next != null){
+            System.out.println(list.head.data);
+            list.head = list.head.next;
         }
-
     }
+
 }
